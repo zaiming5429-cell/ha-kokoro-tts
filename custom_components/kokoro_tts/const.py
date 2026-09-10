@@ -1,0 +1,5 @@
+DOMAIN = "kokoro_tts"
+CONF_API_URL = "api_url"
+CONF_PERSONA = "persona"
+DEFAULT_API_URL = "http://127.0.0.1:8090"
+DEFAULT_PERSONA = "assistant"

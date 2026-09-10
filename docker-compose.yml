@@ -1,0 +1,15 @@
+services:
+  kokoro-tts:
+    build:
+      context: .
+      network: host
+    container_name: kokoro-tts
+    restart: unless-stopped
+    ports:
+      - "8090:8090"
+    volumes:
+      - ./data:/data
+    environment:
+      KOKORO_LANG: a
+      TTS_DEFAULT_VOICE: af_heart
+    mem_limit: 4g

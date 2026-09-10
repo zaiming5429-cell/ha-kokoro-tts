@@ -1,0 +1,12 @@
+{
+  "domain": "kokoro_tts",
+  "name": "Kokoro TTS",
+  "version": "0.1.0",
+  "documentation": "https://github.com/zaiming5429-cell/ha-kokoro-tts",
+  "issue_tracker": "https://github.com/zaiming5429-cell/ha-kokoro-tts/issues",
+  "codeowners": [],
+  "config_flow": true,
+  "dependencies": [],
+  "iot_class": "local_push",
+  "requirements": []
+}
