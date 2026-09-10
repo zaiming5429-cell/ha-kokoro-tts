@@ -1,6 +1,6 @@
 from __future__ import annotations
 import aiohttp
-from homeassistant.components.tts import TtsEntity, TtsAudioType
+from homeassistant.components.tts import TextToSpeechEntity, TtsAudioType
 from homeassistant.config_entries import ConfigEntry
 from homeassistant.core import HomeAssistant
 from .const import DOMAIN, CONF_API_URL, CONF_PERSONA
@@ -8,7 +8,7 @@ from .const import DOMAIN, CONF_API_URL, CONF_PERSONA
 async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry, async_add_entities):
     async_add_entities([KokoroTTSEntity(entry.data[CONF_API_URL], entry.data.get(CONF_PERSONA, "assistant"))])
 
-class KokoroTTSEntity(TtsEntity):
+class KokoroTTSEntity(TextToSpeechEntity):
     _attr_name = "Kokoro TTS"
     _attr_unique_id = "kokoro_tts"
     _attr_supported_options = {"persona", "voice", "speed"}
