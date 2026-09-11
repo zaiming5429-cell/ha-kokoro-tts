@@ -66,6 +66,9 @@ def tts(req: TTSRequest):
         wav = buf.getvalue()
         result = {'id': str(uuid.uuid4()), 'persona': req.persona, 'voice': voice, 'sample_rate': 24000, 'bytes': len(wav)}
         if req.save:
+            # A bind-mounted output directory can disappear while the container
+            # is running. Recreate it before every persisted result.
+            OUT_DIR.mkdir(parents=True, exist_ok=True)
             name = result['id'] + '.wav'
             (OUT_DIR / name).write_bytes(wav)
             result['file'] = f'/audio/{name}'

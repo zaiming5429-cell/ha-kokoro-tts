@@ -1,7 +1,7 @@
 from __future__ import annotations
 import aiohttp
 import logging
-from homeassistant.components.tts import TextToSpeechEntity, TtsAudioType
+from homeassistant.components.tts import TextToSpeechEntity
 from homeassistant.config_entries import ConfigEntry
 from homeassistant.core import HomeAssistant
 from .const import DOMAIN, CONF_API_URL, CONF_PERSONA
@@ -36,7 +36,7 @@ class KokoroTTSEntity(TextToSpeechEntity):
                     if response.status != 200:
                         _LOGGER.error("Kokoro API returned HTTP %s", response.status)
                         return None, None
-                    return TtsAudioType.WAV, await response.read()
+                    return "wav", await response.read()
         except (aiohttp.ClientError, TimeoutError) as exc:
             _LOGGER.error("Unable to connect to Kokoro API at %s: %s", self._api_url, exc)
             return None, None

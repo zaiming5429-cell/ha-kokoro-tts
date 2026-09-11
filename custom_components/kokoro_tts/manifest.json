@@ -1,7 +1,7 @@
 {
   "domain": "kokoro_tts",
   "name": "Kokoro TTS",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "documentation": "https://github.com/zaiming5429-cell/ha-kokoro-tts",
   "issue_tracker": "https://github.com/zaiming5429-cell/ha-kokoro-tts/issues",
   "codeowners": [],
